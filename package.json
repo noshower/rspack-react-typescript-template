@@ -10,7 +10,9 @@
     "lint:style": "stylelint \"src/**/*.{less,css}\"",
     "lint:tsc": "tsc --noEmit",
     "test:unit": "jest --clearCache && jest",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -27,10 +29,19 @@
     "@rspack/cli": "^0.4.4",
     "@rspack/core": "^0.4.4",
     "@rspack/plugin-react-refresh": "^0.4.4",
+    "@storybook/addon-essentials": "^7.6.7",
+    "@storybook/addon-interactions": "^7.6.7",
+    "@storybook/addon-links": "^7.6.7",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.7",
+    "@storybook/react": "^7.6.7",
+    "@storybook/react-webpack5": "^7.6.7",
+    "@storybook/test": "^7.6.7",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "antd-dayjs-webpack-plugin": "^1.0.6",
+    "eslint-plugin-storybook": "^0.6.15",
     "eslint-webpack-plugin": "^4.0.1",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.6.0",
@@ -41,15 +52,18 @@
     "postcss-loader": "^7.3.3",
     "postcss-preset-env": "^9.3.0",
     "react-refresh": "^0.14.0",
+    "storybook": "^7.6.7",
     "stylelint-webpack-plugin": "^4.1.1",
     "ts-node": "^10.9.2",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.3.3",
     "webpack-dev-server": "^4.15.1"
   },
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@darcytech/eslint-config-darcytech"
+      "@darcytech/eslint-config-darcytech",
+      "plugin:storybook/recommended"
     ],
     "rules": {
       "@typescript-eslint/no-explicit-any": "warn",

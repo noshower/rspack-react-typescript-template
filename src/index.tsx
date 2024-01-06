@@ -1,8 +1,14 @@
 import { createRoot } from 'react-dom/client';
 import css from './index.module.less';
+import { Button } from './ui/button/button';
 
 function NavigationBar() {
-  return <h1 className={css.title}>Hello from React!</h1>;
+  return (
+    <div className={css.content}>
+      <h1 className={css.title}>Hello from React!</h1>
+      <Button primary label="Greet" size="large" onClick={() => window.alert('hello')} />
+    </div>
+  );
 }
 
 const domNode = document.getElementById('root')!;
