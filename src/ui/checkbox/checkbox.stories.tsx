@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useArgs } from '@storybook/preview-api';
+import { within, userEvent } from '@storybook/testing-library';
 import { Checkbox } from './checkbox';
 
 const meta = {
@@ -19,6 +20,10 @@ export const Example: Story = {
   args: {
     checked: false,
     label: 'Try Me!',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByText('Try Me!'));
   },
   render: function Render(args) {
     const [{ isChecked }, updateArgs] = useArgs();
