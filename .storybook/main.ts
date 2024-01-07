@@ -59,6 +59,8 @@ const projectRootPath = fs.realpathSync(process.cwd());
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(ts|tsx)'],
+  // ../.msw 目录对应 package.json 中的 msw 字段的 workerDirectory
+  staticDirs: ['../.msw'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-onboarding', '@storybook/addon-interactions'],
   framework: {
     name: '@storybook/react-webpack5',
